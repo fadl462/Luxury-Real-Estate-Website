@@ -88,7 +88,7 @@ def footer(prefix):
   </div>
 </footer>
 
-<div class="prototype-banner">Prototype build for client review — <b>Seafarer Realty</b> · imagery &amp; copy are placeholders pending final assets</div>
+<div class="prototype-banner" id="prototypeBanner">Prototype build for client review — <b>Seafarer Realty</b> · imagery &amp; copy are placeholders pending final assets<button class="prototype-banner-close" id="prototypeBannerClose" aria-label="Dismiss">✕</button></div>
 '''
 
 def page(title, description, prefix, body, extra_head=''):

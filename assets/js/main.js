@@ -73,3 +73,20 @@ document.querySelectorAll('.faq-q').forEach(q => {
     item.classList.toggle('open');
   });
 });
+
+// ---------- Dismissible prototype banner (remembered for this browser tab/session) ----------
+const banner = document.getElementById('prototypeBanner');
+const bannerClose = document.getElementById('prototypeBannerClose');
+if (banner) {
+  try {
+    if (sessionStorage.getItem('seafarer_banner_dismissed') === '1') {
+      banner.classList.add('dismissed');
+    }
+  } catch (e) { /* sessionStorage unavailable — leave banner visible */ }
+  if (bannerClose) {
+    bannerClose.addEventListener('click', () => {
+      banner.classList.add('dismissed');
+      try { sessionStorage.setItem('seafarer_banner_dismissed', '1'); } catch (e) {}
+    });
+  }
+}
